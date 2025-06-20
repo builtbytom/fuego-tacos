@@ -8,16 +8,16 @@ const categories = ['tacos', 'sides', 'drinks', 'desserts'];
 const itemsByCategory = categories.reduce((acc, category) => {
   acc[category] = menuItems.filter(item => item.data.category === category);
   return acc;
-}, {});
+}, {} as Record<string, typeof menuItems>);
 
-const categoryTitles = {
+const categoryTitles: Record<string, string> = {
   tacos: 'Tacos',
   sides: 'Sides',
   drinks: 'Bebidas',
   desserts: 'Postres'
 };
 
-const categoryEmojis = {
+const categoryEmojis: Record<string, string> = {
   tacos: '🌮',
   sides: '🌽',
   drinks: '🥤',
