@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+
+const specials = await getCollection('specials');
+const daysOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const sortedSpecials = specials.sort((a, b) => 
+  daysOrder.indexOf(a.data.dayOfWeek) - daysOrder.indexOf(b.data.dayOfWeek)
+);
+
+// Get today's day
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+---
+
+<section id="specials" class="py-20 bg-zinc-900 text-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-5xl md:text-6xl mb-4">Daily Specials</h2>
+      <p class="text-xl text-zinc-300">Something special every day of the week</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {sortedSpecials.map((special) => (
+        <div class={`bg-zinc-800 rounded-lg p-8 ${special.data.dayOfWeek === today ? 'ring-2 ring-fuego-500' : ''}`}>
+          {special.data.dayOfWeek === today && (
+            <span class="bg-fuego-500 text-white text-sm px-3 py-1 rounded-full mb-4 inline-block">Today's Special!</span>
+          )}
+          <h3 class="font-display text-3xl mb-2">{special.data.title}</h3>
+          <p class="text-fuego-400 font-display text-2xl mb-1">{special.data.dayOfWeek}</p>
+          <p class="text-zinc-300 mb-4">{special.data.description}</p>
+          <p class="font-display text-4xl text-fuego-500">${special.data.price.toFixed(2)}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <p class="text-zinc-400">Can't make it in? Order online for pickup or delivery!</p>
+    </div>
+  </div>
+</section>

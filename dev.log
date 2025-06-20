@@ -1,0 +1,264 @@
+
+> fuego-tacos@0.0.1 dev
+> tinacms dev -c "astro dev"
+
+🦙 TinaCMS Dev Server is initializing...
+[2K[1GIndexing local files ⠋
+│
+○  ✅ 🦙 TinaCMS Dev Server is active: ─────────────────────────────────────╮
+│                                                                          │
+│  🦙 TinaCMS URLs                                                         │
+│     CMS:                <your-dev-server-url>/admin/index.html           │
+│     API playground:     <your-dev-server-url>/admin/index.html#/graphql  │
+│     API url:            http://localhost:4001/graphql                    │
+│                                                                          │
+│  🤖 Auto-generated files                                                 │
+│     GraphQL Client:     tina/__generated__/client.ts                     │
+│     Typescript Types:   tina/__generated__/types.ts                      │
+│                                                                          │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+Running web application with command: astro dev
+10:14:28 [types] Generated 1ms
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:14:28 [content] Syncing content
+10:14:28 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/pages"
+10:14:28 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/specials"
+10:14:28 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/settings"
+10:14:28 [content] Synced content
+
+ astro  v5.10.0 ready in 192 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+10:14:28 watching for file changes...
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:24:12 Configuration file updated. Restarting...
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:24:12 [vite] Re-optimizing dependencies because vite config has changed
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:24:12 [content] Syncing content
+10:24:12 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/pages"
+10:24:12 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/settings"
+10:24:12 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/specials"
+10:24:12 [content] Synced content
+10:24:12 [types] Generated 127ms
+10:24:12 [vite] Re-optimizing dependencies because vite config has changed
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+Tina config change detected, rebuilding
+ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+10:25:01 AM [vite] Internal server error: ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+      at async open (node:internal/fs/promises:633:25)
+      at async Object.readFile (node:internal/fs/promises:1237:14)
+      at async loadAndTransform (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:55030:24)
+      at async viteTransformMiddleware (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:64699:32)
+Unexpected error loading config
+Error: Could not load the "sharp" module using the darwin-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=darwin --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at node_modules/sharp/lib/sharp.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:109763:13)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:19:50)
+    at node_modules/sharp/lib/constructor.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:109773:5)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:19:50)
+    at node_modules/sharp/lib/index.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:113805:17)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:19:50)
+    at Object.<anonymous> (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429500543/config.build.js:244239:28)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at ConfigManager.loadConfigFile (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:1108:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConfigManager.processConfig (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:916:58)
+    at async setup (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2381:9)
+    at async /Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2525:11
+
+
+Could not load the "sharp" module using the darwin-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=darwin --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+
+Dev server has not been restarted
+ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+10:25:03 AM [vite] Internal server error: ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+      at async open (node:internal/fs/promises:633:25)
+      at async Object.readFile (node:internal/fs/promises:1237:14)
+      at async loadAndTransform (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:55030:24)
+      at async viteTransformMiddleware (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:64699:32)
+Tina config change detected, rebuilding
+ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+10:25:07 AM [vite] Internal server error: ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+      at async open (node:internal/fs/promises:633:25)
+      at async Object.readFile (node:internal/fs/promises:1237:14)
+      at async loadAndTransform (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:55030:24)
+      at async viteTransformMiddleware (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:64699:32)
+Unexpected error loading config
+Error: Could not load the "sharp" module using the darwin-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=darwin --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at node_modules/sharp/lib/sharp.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:109765:13)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:20:50)
+    at node_modules/sharp/lib/constructor.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:109775:5)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:20:50)
+    at node_modules/sharp/lib/index.js (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:113807:17)
+    at __require (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:20:50)
+    at Object.<anonymous> (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429507391/config.build.js:244241:28)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at ConfigManager.loadConfigFile (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:1108:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConfigManager.processConfig (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:916:58)
+    at async setup (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2381:9)
+    at async /Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2525:11
+
+
+Could not load the "sharp" module using the darwin-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=darwin --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+
+Dev server has not been restarted
+10:25:09 AM [vite] Internal server error: ENOTDIR: not a directory, open '/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/app/src/dummy-client.ts/promises'
+      at async open (node:internal/fs/promises:633:25)
+      at async Object.readFile (node:internal/fs/promises:1237:14)
+      at async loadAndTransform (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:55030:24)
+      at async viteTransformMiddleware (file:///Users/thomaslucia/fuego-tacos/node_modules/vite/dist/node/chunks/dep-827b23df.js:64699:32)
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+Tina config change detected, rebuilding
+Unexpected error loading config
+ReferenceError: OptimizedMediaStore is not defined
+    at Object.<anonymous> (/private/var/folders/jm/0zcgcy0x073352chk05kks3m0000gn/T/1750429527600/config.build.js:238225:16)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at ConfigManager.loadConfigFile (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:1108:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConfigManager.processConfig (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:916:58)
+    at async setup (/Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2381:9)
+    at async /Users/thomaslucia/fuego-tacos/node_modules/@tinacms/cli/dist/index.js:2525:11
+
+
+OptimizedMediaStore is not defined
+
+Dev server has not been restarted
+Tina config change detected, rebuilding
+[2K[1GIndexing local files ⠋
+Re-index complete
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:41:20 Configuration file updated. Restarting...
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:41:20 [vite] Re-optimizing dependencies because lockfile has changed
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:41:21 [content] Syncing content
+10:41:21 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/pages"
+10:41:21 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/specials"
+10:41:21 [WARN] [glob-loader] No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src/content/settings"
+10:41:21 [content] Synced content
+10:41:21 [types] Generated 102ms
+10:41:21 [vite] Re-optimizing dependencies because vite config has changed
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: menu, pages, settings, specials
+
+10:41:30 Configuration file updated. Restarting...
+10:41:30 [ERROR] [@astrojs/tailwind] An unhandled error occurred while running the "astro:config:setup" hook
+10:41:30 [ERROR] [config] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Stack trace:
+    at /Users/thomaslucia/fuego-tacos/node_modules/tailwindcss/dist/chunk-E562WLSY.mjs:35:2121
+    [...] See full stack trace in the browser, or rerun with --verbose.
+
+10:41:30 [ERROR] Continuing with previous valid configuration
+
+child process exited with code 0

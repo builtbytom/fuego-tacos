@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+
+const menuItems = await getCollection('menu');
+const categories = ['tacos', 'sides', 'drinks', 'desserts'];
+
+// Group items by category
+const itemsByCategory = categories.reduce((acc, category) => {
+  acc[category] = menuItems.filter(item => item.data.category === category);
+  return acc;
+}, {});
+
+const categoryTitles = {
+  tacos: 'Tacos',
+  sides: 'Sides',
+  drinks: 'Bebidas',
+  desserts: 'Postres'
+};
+
+const categoryEmojis = {
+  tacos: '🌮',
+  sides: '🌽',
+  drinks: '🥤',
+  desserts: '🍮'
+};
+---
+
+<section id="menu" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-5xl md:text-6xl text-zinc-900 mb-4">Our Menu</h2>
+      <p class="text-xl text-zinc-600">Fresh ingredients, bold flavors, made with love</p>
+    </div>
+    
+    {categories.map((category) => (
+      <div class="mb-16 last:mb-0" id={`menu-${category}`}>
+        <h3 class="font-display text-4xl text-zinc-900 mb-8 flex items-center gap-3">
+          <span class="text-3xl">{categoryEmojis[category]}</span>
+          {categoryTitles[category]}
+        </h3>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {itemsByCategory[category].map((item) => (
+            <div class="bg-zinc-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="font-semibold text-lg text-zinc-900 flex items-center gap-2">
+                  {item.data.title}
+                  {item.data.featured && (
+                    <span class="bg-fuego-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+                  )}
+                  {item.data.spicy && (
+                    <span class="text-fuego-500">🌶️</span>
+                  )}
+                </h4>
+                <span class="font-display text-2xl text-fuego-600">${item.data.price.toFixed(2)}</span>
+              </div>
+              <p class="text-zinc-600 text-sm">{item.data.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

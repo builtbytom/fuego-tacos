@@ -1,0 +1,49 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-zinc-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-fuego-500 rounded-full flex items-center justify-center">
+            <span class="text-white text-xl">🔥</span>
+          </div>
+          <span class="font-display text-xl">Fuego Street Tacos</span>
+        </div>
+        <p class="text-zinc-400">Authentic flavors, modern vibes. Serving the best tacos in New Haven since 2024.</p>
+      </div>
+      
+      <div>
+        <h3 class="font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#menu" class="text-zinc-400 hover:text-fuego-400 transition-colors">Menu</a></li>
+          <li><a href="#specials" class="text-zinc-400 hover:text-fuego-400 transition-colors">Daily Specials</a></li>
+          <li><a href="#location" class="text-zinc-400 hover:text-fuego-400 transition-colors">Location & Hours</a></li>
+          <li><a href="#" class="text-zinc-400 hover:text-fuego-400 transition-colors">Catering</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-semibold mb-4">Connect With Us</h3>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center hover:bg-fuego-500 transition-colors">
+            <span>📘</span>
+          </a>
+          <a href="#" class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center hover:bg-fuego-500 transition-colors">
+            <span>📷</span>
+          </a>
+          <a href="#" class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center hover:bg-fuego-500 transition-colors">
+            <span>🐦</span>
+          </a>
+        </div>
+        <p class="text-zinc-400">Follow us for daily specials and taco love!</p>
+      </div>
+    </div>
+    
+    <div class="border-t border-zinc-800 pt-8 text-center">
+      <p class="text-zinc-500">&copy; {currentYear} Fuego Street Tacos. All rights reserved. | Website by Built By Tom</p>
+    </div>
+  </div>
+</footer>
