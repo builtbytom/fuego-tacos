@@ -1,42 +1,73 @@
 ---
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-900">
-  <!-- Animated background pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ef4444%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-size: 60px 60px;"></div>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Video/Image background -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900"></div>
+    <img 
+      src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1920&q=80" 
+      alt="Delicious tacos"
+      class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
+    />
   </div>
   
-  <!-- Floating taco shapes -->
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-20 left-10 w-24 h-24 bg-yellow-400 rounded-full opacity-20 animate-float"></div>
-    <div class="absolute top-40 right-20 w-32 h-32 bg-fuego-500 rounded-full opacity-20 animate-float" style="animation-delay: 2s;"></div>
-    <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-green-400 rounded-full opacity-20 animate-float" style="animation-delay: 4s;"></div>
+  <!-- Animated smoke/heat effect -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-fuego-500 rounded-full filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
   </div>
   
   <!-- Hero content -->
-  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    <h1 class="font-display text-6xl md:text-8xl text-white mb-4 animate-fade-in">
-      Fuego Street Tacos
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+    <div class="mb-8 animate-fade-in">
+      <span class="inline-block px-4 py-2 bg-fuego-500/20 border border-fuego-500/50 text-fuego-400 rounded-full text-sm font-medium backdrop-blur-sm">
+        🔥 New Haven's Hottest Taco Spot
+      </span>
+    </div>
+    
+    <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-6 animate-fade-in leading-none" style="animation-delay: 0.2s;">
+      <span class="block text-fuego-500">CRAVE-WORTHY</span>
+      <span class="block">STREET TACOS</span>
     </h1>
-    <p class="text-xl md:text-2xl text-zinc-300 mb-8 animate-fade-in" style="animation-delay: 0.2s;">
-      Authentic flavors, modern vibes
+    
+    <p class="text-xl md:text-2xl lg:text-3xl text-zinc-300 mb-12 animate-fade-in max-w-2xl mx-auto leading-relaxed" style="animation-delay: 0.4s;">
+      Hand-pressed tortillas. Fire-kissed meats. 
+      <span class="text-fuego-400 font-semibold">Flavors that haunt your dreams.</span>
     </p>
     
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style="animation-delay: 0.4s;">
-      <a href="#menu" class="bg-fuego-500 text-white px-8 py-4 rounded-full hover:bg-fuego-600 transition-all transform hover:scale-105 font-medium text-lg">
-        Explore Menu
+    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style="animation-delay: 0.6s;">
+      <a href="#menu" class="group relative bg-fuego-500 text-white px-10 py-5 rounded-full hover:bg-fuego-600 transition-all transform hover:scale-105 font-medium text-lg overflow-hidden">
+        <span class="relative z-10">See What's Cooking</span>
+        <div class="absolute inset-0 bg-gradient-to-r from-fuego-600 to-fuego-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </a>
-      <a href="#location" class="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-zinc-900 transition-all transform hover:scale-105 font-medium text-lg">
-        Find Us
+      <a href="#location" class="group border-2 border-white/50 text-white px-10 py-5 rounded-full hover:bg-white hover:text-zinc-900 transition-all transform hover:scale-105 font-medium text-lg backdrop-blur-sm">
+        <span class="flex items-center gap-2">
+          <span>Order Now</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </span>
       </a>
     </div>
     
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
+    <!-- Trust signals -->
+    <div class="mt-16 flex items-center justify-center gap-8 text-zinc-400 animate-fade-in" style="animation-delay: 0.8s;">
+      <div class="flex items-center gap-2">
+        <span class="text-yellow-500">★★★★★</span>
+        <span class="text-sm">4.9 on Google</span>
+      </div>
+      <div class="text-sm">
+        <span class="text-fuego-400 font-semibold">2,000+</span> Happy Customers
+      </div>
+      <div class="text-sm">
+        Open Until <span class="text-fuego-400 font-semibold">11PM</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Animated scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
     </div>
   </div>
 </section>
@@ -45,7 +76,7 @@
   @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -55,5 +86,6 @@
   
   .animate-fade-in {
     animation: fade-in 1s ease-out forwards;
+    opacity: 0;
   }
 </style>

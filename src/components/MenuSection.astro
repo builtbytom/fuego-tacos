@@ -12,53 +12,136 @@ const itemsByCategory = categories.reduce((acc, category) => {
 
 const categoryTitles: Record<string, string> = {
   tacos: 'Tacos',
-  sides: 'Sides',
+  sides: 'Sides', 
   drinks: 'Bebidas',
   desserts: 'Postres'
 };
 
-const categoryEmojis: Record<string, string> = {
-  tacos: '🌮',
-  sides: '🌽',
-  drinks: '🥤',
-  desserts: '🍮'
+// High-quality food images from Unsplash
+const menuImages: Record<string, string> = {
+  'al-pastor-taco': 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=800&q=80',
+  'carnitas-taco': 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80',
+  'carne-asada-taco': 'https://images.unsplash.com/photo-1604467715878-83e57e8bc129?w=800&q=80',
+  'fish-taco': 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&q=80',
+  'chicken-tinga-taco': 'https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80',
+  'barbacoa-taco': 'https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=800&q=80',
+  'veggie-taco': 'https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=800&q=80',
+  'chips-guacamole': 'https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=800&q=80',
+  'elote': 'https://images.unsplash.com/photo-1629385701021-fcd568a743e8?w=800&q=80',
+  'horchata': 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=800&q=80',
+  'churros': 'https://images.unsplash.com/photo-1636571608688-55fc7e8d3409?w=800&q=80',
+  'flan': 'https://images.unsplash.com/photo-1620360289473-8bef1ff1b6f4?w=800&q=80'
 };
 ---
 
-<section id="menu" class="py-20 bg-white">
+<section id="menu" class="py-24 bg-gradient-to-b from-white to-zinc-50">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="font-display text-5xl md:text-6xl text-zinc-900 mb-4">Our Menu</h2>
-      <p class="text-xl text-zinc-600">Fresh ingredients, bold flavors, made with love</p>
+    <div class="text-center mb-20">
+      <span class="inline-block px-4 py-2 bg-fuego-100 text-fuego-600 rounded-full text-sm font-medium mb-4">
+        Our Menu
+      </span>
+      <h2 class="font-display text-5xl md:text-7xl text-zinc-900 mb-6">
+        Taste The <span class="text-fuego-500">Fire</span>
+      </h2>
+      <p class="text-xl text-zinc-600 max-w-2xl mx-auto">
+        Every dish is a celebration of authentic Mexican flavors, made fresh daily with ingredients we're proud to serve
+      </p>
     </div>
     
+    <!-- Featured Items Carousel -->
+    <div class="mb-20">
+      <h3 class="text-center font-display text-3xl text-zinc-900 mb-10">
+        🔥 Chef's Favorites
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {menuItems.filter(item => item.data.featured).slice(0, 3).map((item) => {
+          const slug = item.slug;
+          const imageUrl = menuImages[slug] || 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80';
+          return (
+            <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={imageUrl}
+                  alt={item.data.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div class="flex justify-between items-end mb-2">
+                  <h4 class="text-2xl font-bold">{item.data.title}</h4>
+                  <span class="font-display text-3xl text-fuego-400">${item.data.price.toFixed(2)}</span>
+                </div>
+                <p class="text-zinc-200 text-sm line-clamp-2">{item.data.description}</p>
+              </div>
+              {item.data.spicy && (
+                <span class="absolute top-4 right-4 bg-fuego-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Spicy 🌶️
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
+    <!-- Category Sections -->
     {categories.map((category) => (
-      <div class="mb-16 last:mb-0" id={`menu-${category}`}>
-        <h3 class="font-display text-4xl text-zinc-900 mb-8 flex items-center gap-3">
-          <span class="text-3xl">{categoryEmojis[category]}</span>
-          {categoryTitles[category]}
-        </h3>
+      <div class="mb-20 last:mb-0" id={`menu-${category}`}>
+        <div class="flex items-center gap-4 mb-10">
+          <div class="h-px bg-zinc-300 flex-1"></div>
+          <h3 class="font-display text-4xl text-zinc-900">
+            {categoryTitles[category]}
+          </h3>
+          <div class="h-px bg-zinc-300 flex-1"></div>
+        </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {itemsByCategory[category].map((item) => (
-            <div class="bg-zinc-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div class="flex justify-between items-start mb-3">
-                <h4 class="font-semibold text-lg text-zinc-900 flex items-center gap-2">
-                  {item.data.title}
+          {itemsByCategory[category].map((item) => {
+            const slug = item.slug;
+            const imageUrl = menuImages[slug];
+            return (
+              <div class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                {imageUrl && (
+                  <div class="aspect-[16/9] overflow-hidden">
+                    <img 
+                      src={imageUrl}
+                      alt={item.data.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <h4 class="font-semibold text-xl text-zinc-900 flex items-center gap-2">
+                      {item.data.title}
+                      {item.data.spicy && (
+                        <span class="text-fuego-500 text-sm">🌶️</span>
+                      )}
+                    </h4>
+                    <span class="font-display text-2xl text-fuego-600">${item.data.price.toFixed(2)}</span>
+                  </div>
+                  <p class="text-zinc-600">{item.data.description}</p>
                   {item.data.featured && (
-                    <span class="bg-fuego-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+                    <span class="inline-block mt-3 bg-fuego-100 text-fuego-600 text-xs px-3 py-1 rounded-full font-medium">
+                      Popular Choice
+                    </span>
                   )}
-                  {item.data.spicy && (
-                    <span class="text-fuego-500">🌶️</span>
-                  )}
-                </h4>
-                <span class="font-display text-2xl text-fuego-600">${item.data.price.toFixed(2)}</span>
+                </div>
               </div>
-              <p class="text-zinc-600 text-sm">{item.data.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     ))}
+    
+    <!-- Call to Action -->
+    <div class="mt-20 text-center bg-gradient-to-r from-fuego-500 to-fuego-600 rounded-3xl p-12 text-white">
+      <h3 class="font-display text-4xl mb-4">Can't Decide?</h3>
+      <p class="text-xl mb-8 opacity-90">Try our Taco Flight - 5 mini tacos, chef's choice</p>
+      <a href="#" class="inline-block bg-white text-fuego-600 px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105">
+        Order the Taco Flight - $18
+      </a>
+    </div>
   </div>
 </section>
